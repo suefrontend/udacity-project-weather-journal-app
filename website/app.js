@@ -32,6 +32,6 @@ let newDate = d.getMonth() + '.' + d.getDate() + '.' + d.getFullYear();
 
 fetch('./projectData')
 	.then((response) => response.json())
-	.then((todoList) => {
-		console.log('todoList', todoList);
+	.then((data) => {
+		console.log('data', data);
 	});
