@@ -18,12 +18,8 @@ app.get('/', function (req, res) {
 });
 
 // Setup empty JS object to act as endpoint for all routes
-// projectData = {};
-const projectData = [
-	{ temperature: 'JavaScripto', date: true, userResponse: 'TEST1' },
-	{ temperature: 'Node.js', date: false, userResponse: 'TEST2' },
-	{ temperature: 'Web API', date: false, userResponse: 'TEST3' },
-];
+projectData = {};
+
 // TODO:
 // Add a GET route that returns the projectData object in your server code
 app.get('/projectData', function (req, res) {
@@ -51,6 +47,16 @@ app.post('/add', (req, res) => {
 	projectData.push(projectDataItem);
 
 	res.json(projectDataItem);
+});
+
+app.get('/all', function (req, res) {
+	const testData = {
+		temp: 23.567,
+		feel: 'Hot',
+		date: new Date(),
+	};
+
+	res.json(testData);
 });
 
 // Setup Server
