@@ -14,7 +14,12 @@
 			<div class="holder headline">Weather Journal App</div>
 			<div class="holder zip">
 				<label for="zip">Enter Zipcode here</label>
-				<input type="text" id="zip" placeholder="enter zip code here" />
+				<input
+					type="text"
+					id="zip"
+					placeholder="enter zip code here: e.g. 10001"
+					value="10001"
+				/>
 			</div>
 			<div class="holder feel">
 				<label for="feelings">How are you feeling today?</label>
@@ -24,15 +29,24 @@
 					placeholder="Enter your feelings here"
 					rows="9"
 					cols="10"
-				></textarea>
+				>
+This is test data</textarea
+				>
 				<button id="generate" type="submit">Generate</button>
 			</div>
 			<div class="holder entry">
 				<div class="title">Most Recent Entry</div>
 				<div id="entryHolder">
+					POST:
 					<div id="date"></div>
+					POST:
 					<div id="temp"></div>
+					POST:
 					<div id="content"></div>
+					GET:
+					<div id="city"></div>
+					GET:
+					<div id="overall"></div>
 				</div>
 			</div>
 		</div>
