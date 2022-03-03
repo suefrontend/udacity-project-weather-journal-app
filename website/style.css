@@ -15,10 +15,6 @@ body {
 .app {
 	width: 90vw;
 	margin: 0 auto;
-	/* position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translateY(-50%) translateX(-50%); */
 }
 .headline {
 	margin-bottom: 20px;
@@ -107,21 +103,15 @@ button:focus {
 /* Style for Placeholder Text*/
 ::placeholder {
 	/* Firefox, Chrome, Opera */
-	/* color: #f0d43a;
-	font-family: 'Oswald', sans-serif; */
 	color: #ccc;
 }
 
 :-ms-input-placeholder {
 	/* Internet Explorer 10-11 */
-	/* color: #f0d43a;
-	font-family: 'Oswald', sans-serif; */
 }
 
 ::-ms-input-placeholder {
 	/* Microsoft Edge */
-	/* color: #f0d43a;
-	font-family: 'Oswald', sans-serif; */
 }
 .hide {
 	display: none;
