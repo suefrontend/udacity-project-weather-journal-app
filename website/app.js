@@ -29,7 +29,7 @@ const day = [
 	'Saturday',
 ];
 let newDate = `${day[d.getDay()]} ${
-	month[d.getMonth() + 1]
+	month[d.getMonth()]
 } ${d.getDate()}, ${d.getFullYear()}`;
 
 // Fetch weather data from API
