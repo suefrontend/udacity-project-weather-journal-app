@@ -3,10 +3,6 @@ const baseUrl =
 	'https://api.openweathermap.org/data/2.5/weather?units=imperial&zip=';
 
 const submitBtn = document.getElementById('generate');
-const feelings = document.getElementById('feelings');
-const feelValue = feelings.value;
-const zipValue = zip.value;
-const temperature = 5;
 
 let d = new Date();
 const month = [
@@ -50,12 +46,31 @@ const fetchWeather = async (url, zip, api) => {
 // Fetch weather of specific city from API using zip code
 const fetchWeatherByZipCode = async () => {
 	const zip = document.getElementById('zip').value;
+	const feelings = document.getElementById('feelings').value;
+
+	const zipWarning = document.querySelector('.zip-warning');
+	const feelingWarning = document.querySelector('.feeling-warning');
+
+	if (zip.length === 0) {
+		zipWarning.classList.remove('hide');
+		return;
+	} else if (zip.length !== 0) {
+		zipWarning.classList.add('hide');
+	}
+
+	if (feelings.length === 0) {
+		feelingWarning.classList.remove('hide');
+		return;
+	} else if (feelings.length !== 0) {
+		feelingWarning.classList.add('hide');
+	}
+
 	try {
 		const res = await fetchWeather(baseUrl, zip, apiKey);
 
 		postData({
 			date: newDate,
-			content: feelValue,
+			content: feelings,
 			temp: res.main.temp,
 			description: res.weather[0].description,
 			city: res.name,
@@ -68,8 +83,6 @@ const fetchWeatherByZipCode = async () => {
 };
 
 const postData = async (data) => {
-	if (zipValue.length === 0 || feelValue.length === 0) return;
-
 	const res = await fetch('/weather/add', {
 		method: 'POST',
 		headers: {
@@ -90,12 +103,16 @@ const updateUI = async () => {
 	try {
 		const data = await request.json();
 
-		document.getElementById('temp').innerHTML =
-			Math.round(data.temp) + 'degrees';
+		document.getElementById('zip').value = '';
+		document.getElementById('feelings').value = '';
+
 		document.getElementById('date').innerHTML = data.date;
-		document.getElementById('content').innerHTML = data.content;
+		document.getElementById('temp').innerHTML = `${Math.round(data.temp)} F`;
 		document.getElementById('city').innerHTML = data.city;
 		document.getElementById('overall').innerHTML = data.description;
+		document.getElementById(
+			'content'
+		).innerHTML = `Note: <br />${data.content}`;
 	} catch (error) {
 		console.log('Error: ', error);
 	}

@@ -25,8 +25,8 @@ app.post('/weather/add', (req, res) => {
 		date: req.body.date,
 		temp: req.body.temp,
 		content: req.body.content,
-		description: req.body.description,
 		city: req.body.city,
+		description: req.body.description,
 	};
 
 	res.send(projectData);

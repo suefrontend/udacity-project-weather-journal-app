@@ -10,43 +10,41 @@
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
-		<div id="app">
-			<div class="holder headline">Weather Journal App</div>
-			<div class="holder zip">
-				<label for="zip">Enter Zipcode here</label>
-				<input
-					type="text"
-					id="zip"
-					placeholder="enter zip code here: e.g. 10001"
-					value="10001"
-				/>
+		<div class="app">
+			<div class="headline">
+				<h1 class="headline__title">Weather Journal App</h1>
 			</div>
-			<div class="holder feel">
-				<label for="feelings">How are you feeling today?</label>
-				<textarea
-					class="myInput"
-					id="feelings"
-					placeholder="Enter your feelings here"
-					rows="9"
-					cols="10"
-				>
-This is test data</textarea
-				>
-				<button id="generate" type="submit">Generate</button>
-			</div>
-			<div class="holder entry">
-				<div class="title">Most Recent Entry</div>
-				<div id="entryHolder">
-					POST:
-					<div id="date"></div>
-					POST:
-					<div id="temp"></div>
-					POST:
-					<div id="content"></div>
-					GET:
-					<div id="city"></div>
-					GET:
-					<div id="overall"></div>
+			<div class="container">
+				<div class="post-journal">
+					<div class="zip">
+						<label for="zip">Enter Zipcode</label>
+						<input type="text" id="zip" placeholder="e.g. 10001" />
+						<span class="zip-warning hide">Please enter zip code</span>
+					</div>
+					<div class="feel">
+						<label for="feelings">How are you feeling today?</label>
+						<textarea
+							class="myInput"
+							id="feelings"
+							placeholder="Enter your feelings here"
+							rows="9"
+							cols="10"
+						></textarea>
+						<span class="feeling-warning hide">Please enter your feeling</span>
+					</div>
+					<button id="generate" type="submit">Generate</button>
+				</div>
+				<div class="entry">
+					<div class="title">
+						<h2 class="title__heading">Most Recent Entry</h2>
+					</div>
+					<div class="entry-container">
+						<div id="date"></div>
+						<div id="temp"></div>
+						<div id="city"></div>
+						<div id="overall"></div>
+						<div id="content"></div>
+					</div>
 				</div>
 			</div>
 		</div>
