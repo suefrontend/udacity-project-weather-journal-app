@@ -1,5 +1,5 @@
 <h1 align="center">Weather-Journal App Project</h1>
-<img src="website/app-image.jpg" align="center">
+<img src="website/app-image.jpg" align="center" style="border: 1px solid #ccc">
 
 ## App Overview
 
@@ -13,13 +13,8 @@ Create an asynchronous web app that uses Web API and user data to dynamically up
 
 1. Clone directory or download the zip file.
 
-2. Run the following command on terminal to download dependencies
-   `npm install`
+2. Run `npm install` on terminal to download dependencies
 
-3. Run the following commend to open the server and start the app
-
-`npm run start`
-or
-`node server.js`
+3. Run `npm run start` or `node server.js` to open the server and start the app
 
 4. Go to `localhost:3000` to use the app
